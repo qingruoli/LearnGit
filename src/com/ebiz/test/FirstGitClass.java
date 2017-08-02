@@ -8,6 +8,7 @@ public class FirstGitClass {
 		System.out.println("Git branch Developer changes.");
 		System.out.println("Git commit Developer.");
 		System.out.println("Git commit not push.");
+		System.out.println("Git commit and push.");
 		return;
 	}
 }
