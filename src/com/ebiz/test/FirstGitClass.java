@@ -7,6 +7,7 @@ public class FirstGitClass {
 		System.out.println("Git branch Master Merged to Developer.");
 		System.out.println("Git branch Developer changes.");
 		System.out.println("Git commit Developer.");
+		System.out.println("Git commit not push.");
 		return;
 	}
 }
