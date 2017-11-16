@@ -30,5 +30,6 @@ public class Random {
         //added by develeoper.
         
         //提交2
+        //SIT ADD
     }
 }
