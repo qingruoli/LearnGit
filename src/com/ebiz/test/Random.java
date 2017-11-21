@@ -27,7 +27,9 @@ public class Random {
         // 核保接口: http://m.evergrandelife.com.cn/thirdOrderUwService
         // 支付接口： http://m.evergrandelife.com.cn/orderPay/postalOrderPay.action?action=postalOrderPay&orderNo=
         // comId: 8601
+        //added by develeoper.
         
         //提交2
+        //SIT ADD
     }
 }
