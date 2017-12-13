@@ -9,6 +9,9 @@ package com.ebiz.proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.ebiz.proxy.service.OperationService;
 import com.ebiz.proxy.service.impl.OperationServiceImpl;
@@ -64,6 +67,7 @@ public class InvocationHandlerProxy implements InvocationHandler{
     public static void main(String[] args) {
         OperationService service = new OperationServiceImpl();
         InvocationHandlerProxy proxy = new  InvocationHandlerProxy (service);
+        @SuppressWarnings("unchecked")
         Class<OperationService>[] clazz = new Class[] {OperationService.class};
         OperationService aopService = (OperationService) Proxy.newProxyInstance(OperationService.class.getClassLoader(), clazz, proxy);
         aopService.doOperate();
@@ -74,9 +78,28 @@ public class InvocationHandlerProxy implements InvocationHandler{
                 System.out.println("beforex");
                 Object result = method.invoke(new OperationServiceImpl(), args);
                 System.out.println(result);
-                System.out.println("end");
+                System.out.println("endx");
                 return result;
             }});
         aopService.doOperate();
+        
+        System.out.println("====================================================");
+        test();
+        System.out.println("====================================================");
+        System.out.println("====================================================");
+        System.out.println(System.getProperty("java.ext.dirs"));
+        
+        System.out.println(ClassLoader.getSystemClassLoader().getClass().getName());
+    }
+    /**
+     * 查看BootRtrapClassLoader都加载了啥
+     *
+     * @date 2017年12月7日 
+     */
+    public static void test() {  
+        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();    
+        for (int i = 0; i < urls.length; i++) {    
+            System.out.println(urls[i].toExternalForm());    
+        }   
     }
 }

@@ -18,6 +18,8 @@ public class FirstGitClass {
                 iterator.remove();
             }
         }
+        double a = 0.0;
+        long b = (long) a;
         System.out.println(list);
         /*for (String item : list) {
             System.out.println(item);
