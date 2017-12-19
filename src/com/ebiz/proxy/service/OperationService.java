@@ -16,4 +16,5 @@ package com.ebiz.proxy.service;
  */
 public interface OperationService {
     public String doOperate();
+    public String unProxiedDoOperate();
 }

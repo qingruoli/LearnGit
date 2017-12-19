@@ -6,6 +6,8 @@
  */
 package com.ebiz.test;
 
+import java.net.URL;
+
 import com.ebiz.classLoader.MyClassLoader;
 
 /**
@@ -29,5 +31,25 @@ public class TestMyClassLoader
         c1 =  Class.forName("java.lang.String");
         obj = c1.newInstance();
         System.out.println(obj.getClass().getClassLoader());
+        
+        System.out.println("=======================类加载器=============================");
+        test();
+        System.out.println("====================================================");
+        System.out.println("====================================================");
+        System.out.println(System.getProperty("java.ext.dirs"));
+        
+        System.out.println(ClassLoader.getSystemClassLoader().getClass().getName());
+    }
+    
+    /**
+     * 查看BootStrapClassLoader都加载了啥
+     *
+     * @date 2017年12月7日 
+     */
+    public static void test() {
+        URL[] urls = sun.misc.Launcher.getBootstrapClassPath().getURLs();    
+        for (int i = 0; i < urls.length; i++) {    
+            System.out.println(urls[i].toExternalForm());    
+        }   
     }
 }

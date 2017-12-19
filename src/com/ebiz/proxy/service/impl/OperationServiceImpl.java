@@ -31,6 +31,19 @@ public class OperationServiceImpl implements OperationService {
             }
         }
         System.out.println("result:" + res.toString());
+        System.out.println("经过动态代理" + this.getClass().getName());
         return res.toString();
+    }
+
+    /**
+     * 【方法功能描述】
+     *
+     * @return
+     * @date 2017年12月14日 
+     */
+    @Override
+    public String unProxiedDoOperate() {
+        System.out.println("没有经过动态代理" + this.getClass().getName());
+        return "没有经过动态代理";
     }
 }
