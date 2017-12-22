@@ -13,13 +13,14 @@ package com.ebiz.tree.entity;
  * @author cao.qifa 
  * @date 2017年11月27日 
  * @version 1.0
+ * @param <E>
  */
-public class BinaryTreeNode {
-    private Object value;
-    private BinaryTreeNode leftChild;
-    private BinaryTreeNode rightChild;
+public class BinaryTreeNode<E> {
+    private E value;
+    private BinaryTreeNode<E> leftChild;
+    private BinaryTreeNode<E> rightChild;
     public BinaryTreeNode() {}
-    public BinaryTreeNode(Object value) {
+    public BinaryTreeNode(E value) {
         this.leftChild = null;
         this.rightChild = null;
         this.value = value;
@@ -28,42 +29,42 @@ public class BinaryTreeNode {
     /**
      * @return the value
      */
-    public Object getValue() {
+    public E getValue() {
         return value;
     }
     
     /**
      * @param value the value to set
      */
-    public void setValue(Object value) {
+    public void setValue(E value) {
         this.value = value;
     }
     
     /**
      * @return the leftChild
      */
-    public BinaryTreeNode getLeftChild() {
+    public BinaryTreeNode<E> getLeftChild() {
         return leftChild;
     }
     
     /**
      * @param leftChild the leftChild to set
      */
-    public void setLeftChild(BinaryTreeNode leftChild) {
+    public void setLeftChild(BinaryTreeNode<E> leftChild) {
         this.leftChild = leftChild;
     }
     
     /**
      * @return the rightChild
      */
-    public BinaryTreeNode getRightChild() {
+    public BinaryTreeNode<E> getRightChild() {
         return rightChild;
     }
     
     /**
      * @param rightChild the rightChild to set
      */
-    public void setRightChild(BinaryTreeNode rightChild) {
+    public void setRightChild(BinaryTreeNode<E> rightChild) {
         this.rightChild = rightChild;
     }
     
