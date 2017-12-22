@@ -39,7 +39,7 @@ public class CglibTest {
     }
 
     public static void test2() {
-        System.setProperty("sun.misc.proxyGenerator.saveGeneratedFiles", "true");
+        // System.setProperty("sun.misc.proxyGenerator.saveGeneratedFiles", "true");
         DaoProxy daoProxy = new DaoProxy();
         DaoAnotherProxy anotherProxy = new DaoAnotherProxy();
         Enhancer enhancer = new Enhancer();
